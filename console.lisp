@@ -157,10 +157,10 @@
 
 (defun message (format-string &rest args)
   "Print a log message by passing the arguments to
-`*message-function'. When the variable `*message-logging*' is nil,
+`*message-function*'. When the variable `*message-logging*' is nil,
 this output is disabled."
     (let ((message-string (apply #'format nil format-string args)))
-      (when *message-logging* 
+      (when *message-logging*
 	(funcall *message-function* message-string))
       (dolist (hook *message-hook*)
 	(funcall hook))
