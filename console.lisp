@@ -1140,7 +1140,7 @@ Directories are searched in list order.")
 (defun search-project-path (project)
   "Search the `*project-directories*' path for a directory with the
 name PROJECT. Returns the pathname if found, otherwise nil."
-  (let ((dirs (default-project-directories)))
+  (let ((dirs *project-directories*))
     (assert (stringp project))
     (or 
      (loop 
